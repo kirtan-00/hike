@@ -18,19 +18,19 @@ export const CaseStudiesSection = () => {
           <StaggerContainer className="space-y-12">
             <StaggerItem>
                <h4 className="text-xs font-bold text-nike-gray tracking-widest uppercase mb-4">Documentaries</h4>
-               <p className="text-xl md:text-3xl font-black uppercase"><span className="text-white">5</span> Documentaries</p>
+               <p className="text-xl md:text-2xl lg:text-3xl font-black uppercase"><span className="text-white">5</span> Documentaries</p>
                <p className="text-gray-400 font-medium font-serif italic mt-2">Planned and assisted in comprehensive strategy.</p>
             </StaggerItem>
             
             <StaggerItem>
                <h4 className="text-xs font-bold text-nike-gray tracking-widest uppercase mb-4">City Videos</h4>
-               <p className="text-xl md:text-3xl font-black uppercase"><span className="text-white">3</span> City Videos</p>
+               <p className="text-xl md:text-2xl lg:text-3xl font-black uppercase"><span className="text-white">3</span> City Videos</p>
                <p className="text-gray-400 font-medium font-serif italic mt-2">Co-directed, conceptualized, set visuals and treatment.</p>
             </StaggerItem>
             
             <StaggerItem>
                <h4 className="text-xs font-bold text-nike-gray tracking-widest uppercase mb-4">Vox Pops</h4>
-               <p className="text-xl md:text-3xl font-black uppercase"><span className="text-white">3</span> Vox Pops</p>
+               <p className="text-xl md:text-2xl lg:text-3xl font-black uppercase"><span className="text-white">3</span> Vox Pops</p>
                <p className="text-gray-400 font-medium font-serif italic mt-2">Personally and independently shot on-ground.</p>
             </StaggerItem>
           </StaggerContainer>
