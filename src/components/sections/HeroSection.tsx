@@ -21,9 +21,11 @@ export const HeroSection = () => {
     if (!containerRef.current) return 45; 
     const rect = containerRef.current.getBoundingClientRect();
     
-    // Y runs top-to-bottom. Bottom is rect.height. Camera is 40px from bottom.
-    const cameraY = rect.height - 40;
-    const cameraX = 40;
+    // Y runs top-to-bottom. Bottom is rect.height. Camera is 24px/40px from bottom.
+    const isMobile = rect.width < 768;
+    const offset = isMobile ? 24 : 40;
+    const cameraY = rect.height - offset;
+    const cameraX = offset;
     
     const dy = (y as number) - cameraY; 
     const dx = (x as number) - cameraX;
@@ -38,6 +40,11 @@ export const HeroSection = () => {
   useMotionValueEvent(rotation, "change", (latestRotation) => {
     if (containerRef.current) {
       containerRef.current.style.setProperty('--angle', `${latestRotation}deg`);
+      
+      // Responsive offset for the mask origin
+      const rect = containerRef.current.getBoundingClientRect();
+      const offset = rect.width < 768 ? '24px' : '40px';
+      containerRef.current.style.setProperty('--offset', offset);
     }
   });
 
@@ -112,8 +119,8 @@ export const HeroSection = () => {
         className="absolute inset-0 z-20 pointer-events-none flex flex-col items-center justify-center text-center px-6 py-24"
         style={{
           // --angle is injected via Framer Motion. We subtract ~15deg so the center of the text gradient matches the 30deg visual beam.
-          maskImage: "conic-gradient(from calc(var(--angle, 45deg) - 15deg) at 40px calc(100% - 40px), transparent 0deg, black 5deg, black 25deg, transparent 30deg)",
-          WebkitMaskImage: "conic-gradient(from calc(var(--angle, 45deg) - 15deg) at 40px calc(100% - 40px), transparent 0deg, black 5deg, black 25deg, transparent 30deg)"
+          maskImage: "conic-gradient(from calc(var(--angle, 45deg) - 15deg) at var(--offset, 40px) calc(100% - var(--offset, 40px)), transparent 0deg, black 5deg, black 25deg, transparent 30deg)",
+          WebkitMaskImage: "conic-gradient(from calc(var(--angle, 45deg) - 15deg) at var(--offset, 40px) calc(100% - var(--offset, 40px)), transparent 0deg, black 5deg, black 25deg, transparent 30deg)"
         }}
       >
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-6">
@@ -137,15 +144,15 @@ export const HeroSection = () => {
           background: "conic-gradient(from 0deg at 0% 100%, rgba(255,255,255,0.5) 0deg, rgba(255,87,34,0.4) 15deg, transparent 30deg)",
           transformOrigin: "0% 100%",
           rotate: rotation,
-          left: '40px', 
-          bottom: '40px'
+          left: 'var(--offset, 40px)', 
+          bottom: 'var(--offset, 40px)'
         }}
       />
 
-      {/* Camera Icon perfectly centered at left:40px, bottom:40px */}
+      {/* Camera Icon perfectly centered at responsive offset */}
       <div 
         className="absolute z-30 flex items-center justify-center pointer-events-none"
-        style={{ left: '40px', bottom: '40px', transform: 'translate(-50%, 50%)' }}
+        style={{ left: 'var(--offset, 40px)', bottom: 'var(--offset, 40px)', transform: 'translate(-50%, 50%)' }}
       >
         <Camera className="w-12 h-12 text-nike-orange absolute" />
         <div className="w-4 h-4 rounded-full bg-white absolute animate-pulse shadow-[0_0_20px_#fff]" />

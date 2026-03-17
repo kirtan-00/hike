@@ -11,7 +11,7 @@ interface TypographyProps extends HTMLMotionProps<'div'> {
 export const HeroTitle = ({ children, className, ...props }: TypographyProps) => {
   return (
     <motion.h1 
-      className={cn("text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-[0.85]", className)}
+      className={cn("text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-[0.85]", className)}
       {...props as any}
     >
       {children}
@@ -22,7 +22,7 @@ export const HeroTitle = ({ children, className, ...props }: TypographyProps) =>
 export const SectionTitle = ({ children, className, ...props }: TypographyProps) => {
   return (
     <motion.h2 
-      className={cn("text-4xl md:text-6xl font-black uppercase tracking-tighter text-white", className)}
+      className={cn("text-3xl md:text-6xl font-black uppercase tracking-tighter text-white", className)}
       {...props as any}
     >
       {children}
@@ -43,7 +43,7 @@ export const ScrollRevealHeading = ({ text, className, ...props }: { text: strin
   return (
     <motion.h2 
       ref={ref}
-      className={cn("text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white flex flex-wrap gap-x-0 md:gap-x-4", className)}
+      className={cn("text-3xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white flex flex-wrap gap-x-0 md:gap-x-4", className)}
       {...props as any}
     >
       {words.map((word, i) => {

@@ -11,7 +11,7 @@ export const Section = ({ children, className, id, ...props }: SectionProps) => 
   return (
     <section 
       id={id}
-      className={cn("py-24 md:py-32 w-full border-t border-white/10", className)}
+      className={cn("py-16 md:py-32 w-full border-t border-white/10", className)}
       {...props as any}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">

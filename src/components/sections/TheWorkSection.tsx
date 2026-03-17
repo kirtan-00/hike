@@ -3,7 +3,7 @@ import { ScrollRevealHeading } from '../ui/Typography';
 
 const ItemCard = ({ number, title, subtitle }: { number: string; title: string; subtitle: string }) => (
   <StaggerItem className="flex flex-col gap-2">
-    <span className="text-8xl md:text-9xl font-black text-white leading-none tracking-tighter">
+    <span className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter">
       {number}
     </span>
     <div className="border-t-2 border-white/20 pt-4 mt-2">
@@ -31,7 +31,7 @@ export const TheWorkSection = () => {
         <span className="text-nike-gray font-bold tracking-widest text-sm hidden md:block uppercase">Output Analysis</span>
       </FadeIn>
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 mb-24">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
         <ItemCard 
           number="67" 
           title="TOTAL VIDEOS" 

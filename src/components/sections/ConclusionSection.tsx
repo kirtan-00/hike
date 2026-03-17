@@ -20,7 +20,7 @@ export const ConclusionSection = () => {
            transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
            className="mb-16"
         >
-          <div className="text-7xl md:text-9xl font-black text-nike-orange tracking-tighter leading-none mb-4">
+          <div className="text-6xl md:text-9xl font-black text-nike-orange tracking-tighter leading-none mb-4">
             ₹20,000
           </div>
           <div className="text-3xl md:text-4xl font-black text-white uppercase tracking-wider">

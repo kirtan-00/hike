@@ -5,7 +5,7 @@ import { Layers, Zap, Moon, Clock } from 'lucide-react';
 const Card = ({ title, icon: Icon, items, scope, glowColor }: any) => (
   <StaggerItem className="relative group">
     <div className={`absolute inset-0 bg-gradient-to-b ${glowColor} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`} />
-    <div className="relative h-full bg-white/5 border border-white/10 p-8 flex flex-col hover:border-white/20 transition-colors duration-300">
+    <div className="relative h-full bg-white/5 border border-white/10 p-6 md:p-8 flex flex-col hover:border-white/20 transition-colors duration-300">
       <div className="flex items-center gap-3 mb-8">
         <Icon className="w-6 h-6 text-nike-orange" />
         <h3 className="text-2xl font-black uppercase tracking-wider text-white">{title}</h3>

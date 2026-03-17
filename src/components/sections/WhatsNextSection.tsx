@@ -23,7 +23,7 @@ export const WhatsNextSection = () => {
             <div className="bg-nike-orange/20 p-3 rounded-none">
               <Calendar className="w-6 h-6 text-nike-orange" />
             </div>
-            <h3 className="text-2xl font-black uppercase tracking-wider text-white">Automated Pipelines</h3>
+            <h3 className="text-xl md:text-2xl font-black uppercase tracking-wider text-white">Automated Pipelines</h3>
           </div>
           
           <div className="relative z-10 space-y-4">
@@ -46,7 +46,7 @@ export const WhatsNextSection = () => {
             <div className="bg-nike-orange/20 p-3 rounded-none">
               <PenTool className="w-6 h-6 text-nike-orange" />
             </div>
-            <h3 className="text-2xl font-black uppercase tracking-wider text-white">Painting Every Canvas</h3>
+            <h3 className="text-xl md:text-2xl font-black uppercase tracking-wider text-white">Painting Every Canvas</h3>
           </div>
           
           <div className="relative z-10 space-y-4">
@@ -76,7 +76,7 @@ export const WhatsNextSection = () => {
             <div className="bg-nike-orange/20 p-3 rounded-none">
               <span className="text-2xl">🎬</span>
             </div>
-            <h3 className="text-2xl md:text-4xl font-black uppercase tracking-wider text-white">BTS Vlogs & Viral Production</h3>
+            <h3 className="text-xl md:text-4xl font-black uppercase tracking-wider text-white">BTS Vlogs & Viral Production</h3>
           </div>
           
           <div className="relative z-10 space-y-4 max-w-4xl">
