@@ -62,7 +62,7 @@ export const ScrollRevealHeading = ({ text, className, ...props }: { text: strin
           <motion.span 
             key={i} 
             style={{ opacity, y, scale, filter }} 
-            className="inline-block mt-2 mr-4 md:mr-0"
+            className="inline-block mt-1 mr-3 md:mt-2 md:mr-0 leading-[1.1]"
           >
             {word}
           </motion.span>
