@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  cursor: none !important;
+}
+
 @theme {
   --font-sans: "Inter", "Anton", "Impact", system-ui, sans-serif;
   

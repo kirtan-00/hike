@@ -1,27 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { HeroTitle, BodyText } from '../ui/Typography';
-import { motion, useMotionValue, useSpring, useTransform, useMotionValueEvent, MotionValue } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useMotionValueEvent } from 'framer-motion';
 import { Camera } from 'lucide-react';
-
-const Sparkle = ({ mouseX, mouseY, index }: { mouseX: MotionValue<number>; mouseY: MotionValue<number>; index: number }) => {
-  // Staggered springs for a trailing pixie dust effect
-  const springX = useSpring(mouseX, { damping: 15 + index * 3, stiffness: 200 - index * 15, mass: 0.5 + index * 0.1 });
-  const springY = useSpring(mouseY, { damping: 15 + index * 3, stiffness: 200 - index * 15, mass: 0.5 + index * 0.1 });
-  
-  return (
-    <motion.div
-      className="absolute w-2 h-2 rounded-full pointer-events-none mix-blend-screen z-50"
-      style={{
-        x: springX,
-        y: springY,
-        backgroundColor: index % 2 === 0 ? '#ff5722' : '#ffffff', // Mix of orange and white dust
-        boxShadow: `0 0 ${8 + index * 2}px 2px ${index % 2 === 0 ? '#ff5722' : '#ffffff'}`,
-        scale: 1 - index * 0.15,
-        opacity: 1 - index * 0.1
-      }}
-    />
-  );
-};
 
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -104,13 +84,8 @@ export const HeroSection = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[100svh] flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden border-b-0 cursor-none bg-black"
+      className="relative min-h-[100svh] flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden border-b-0 bg-black"
     >
-      {/* Pixie Dust Cursor */}
-      {[...Array(6)].map((_, i) => (
-        <Sparkle key={i} index={i} mouseX={mouseX} mouseY={mouseY} />
-      ))}
-
       {/* 
         Dark underlying content for normal state 
         Opacity is 0.02 so it's virtually invisible unless the light shines on it.
