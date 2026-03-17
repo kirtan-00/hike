@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Anton", "Impact", system-ui, sans-serif;
+  
+  --color-nike-orange: #ff5722;
+  --color-nike-dark: #000000;
+  --color-nike-gray: #a3a3a3;
+  --color-nike-light: #ffffff;
+}
+
+:root {
+  background-color: var(--color-nike-dark);
+  color: var(--color-nike-light);
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000000;
+}
+
+/* Base headings */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar for sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-nike-orange);
+}
